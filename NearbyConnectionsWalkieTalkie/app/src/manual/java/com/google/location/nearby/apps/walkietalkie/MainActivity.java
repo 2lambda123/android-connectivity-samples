@@ -34,6 +34,7 @@ import com.google.android.gms.nearby.connection.ConnectionInfo;
 import com.google.android.gms.nearby.connection.Payload;
 import com.google.android.gms.nearby.connection.Strategy;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Random;
@@ -700,7 +701,7 @@ public class MainActivity extends ConnectionsActivity implements SensorEventList
 
   private static String generateRandomName() {
     String name = "";
-    Random random = new Random();
+    Random random = new SecureRandom();
     for (int i = 0; i < 5; i++) {
       name += random.nextInt(10);
     }
@@ -709,7 +710,7 @@ public class MainActivity extends ConnectionsActivity implements SensorEventList
 
   @SuppressWarnings("unchecked")
   private static <T> T pickRandomElem(Collection<T> collection) {
-    return (T) collection.toArray()[new Random().nextInt(collection.size())];
+    return (T) collection.toArray()[new SecureRandom().nextInt(collection.size())];
   }
 
   /**

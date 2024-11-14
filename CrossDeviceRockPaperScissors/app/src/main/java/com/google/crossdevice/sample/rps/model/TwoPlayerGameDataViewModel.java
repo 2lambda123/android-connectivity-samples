@@ -23,6 +23,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStoreOwner;
+import java.security.SecureRandom;
 import java.util.Random;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,7 +52,7 @@ public final class TwoPlayerGameDataViewModel extends ViewModel implements GameD
   private boolean localPlayerChoiceConfirmed;
   private RoundWinner roundWinner = RoundWinner.PENDING;
   private int roundsCompleted;
-  private final Random randomGenerator = new Random();
+  private final Random randomGenerator = new SecureRandom();
 
   public static TwoPlayerGameDataViewModel createInstance(Context context) {
     return new ViewModelProvider((ViewModelStoreOwner) context)
