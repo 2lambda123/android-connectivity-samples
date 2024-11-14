@@ -16,6 +16,7 @@
 
 package com.google.crossdevice.sample.rps.model;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 /** Utility class to generate random Android names */
@@ -57,7 +58,7 @@ public final class CodenameGenerator {
         "Pie"
       };
 
-  private static final Random generator = new Random();
+  private static final Random generator = new SecureRandom();
 
   private CodenameGenerator() {}
 
